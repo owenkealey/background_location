@@ -54,7 +54,7 @@ class BackgroundLocation {
 
   /// Ask the user for location permissions
   static getPermissions({Function onGranted, Function onDenied}) async {
-    await Permission.locationWhenInUse.request();
+    await Permission.locationAlways.request();
     if (await Permission.locationWhenInUse.isGranted) {
       if (onGranted != null) {
         onGranted();
